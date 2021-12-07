@@ -1,11 +1,12 @@
 // import App from 'next/app'
 import '/styles/globals.css'
 import Head from 'next/head'
+import {isDev} from '../lib'
 
 export default function MyApp({ Component, pageProps }) {
   return (<>
     <Head>
-      <link rel="icon" href="/tea.jpg"></link>
+      <link rel="icon" href={`/tea${isDev && '.dev'}.jpg`}></link>
     </Head>
     
     <Component {...pageProps} />
