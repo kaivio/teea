@@ -1,0 +1,22 @@
+
+.b{
+  padding: 1em 10vw;
+  height: 100vh;
+  max-height: 100vw;
+}
+
+.p{
+  width: 10vw;
+  height: 10vw;
+  font-size: 7vw;
+  font-weight: 700;
+}
+
+.color1 { color: #FDB273; }
+.color2 { color: #EB9469; }
+.color3 { color: #D77860; }
+.color4 { color: #C4964D; }
+.color5 { color: #88CC84; }
+.color6 { color: #00DDEB; }
+.color7 { color: #00AAFF; }
+.color8 { color: #E51CC6; }

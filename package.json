@@ -1,0 +1,34 @@
+{
+  "name": "tooh",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/runtime": "^1.6.22",
+    "@next/mdx": "^12.0.4",
+    "@theme-ui/typography": "^0.12.0",
+    "disqus-react": "^1.1.2",
+    "gray-matter": "^4.0.3",
+    "next": "12.0.4",
+    "prism-react-renderer": "^1.2.1",
+    "prop-types": "^15.7.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-ga": "^3.3.0",
+    "theme-ui": "^0.12.0",
+    "theme-ui-preset-geist": "^0.0.2",
+    "typography-theme-wordpress-2016": "^0.16.19"
+  },
+  "devDependencies": {
+    "eslint": "7",
+    "eslint-config-next": "12.0.4",
+    "onchange": "^7.1.0",
+    "prettier": "^2.4.1"
+  }
+}

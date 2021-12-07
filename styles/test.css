@@ -1,0 +1,8 @@
+x{
+  background: radial-gradient(
+    circle,
+    #66ccff 20%,transparent 20%,
+    transparent 100%
+  );
+  background-size: 30px;
+}
