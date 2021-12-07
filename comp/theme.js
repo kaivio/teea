@@ -33,7 +33,7 @@ export default {
     white: "#fff",
     yellow: "#FFDD22",
     lite: "#eee",
-    selection:'#b8956c77',
+    selection:'#b9a38d77',
     modes: {
       dark: {
         text: "#fff",

@@ -1,10 +1,10 @@
 import config from "../../blog.config"
-import Wrapper from "../../src/layout/Wrapper"
-import Posts from "../../src/views/Posts"
-import { getAllPosts } from "../../src/api"
+import Layout from "../../comp/layout"
+import Posts from "../../comp/posts"
+import { getAllPosts } from "../../lib"
 
 const PostsPage = ({ posts, prevPosts, nextPosts }) => (
-  <Wrapper
+  <Layout
     url={config.url}
     title={config.title}
     description={config.description}
@@ -12,7 +12,7 @@ const PostsPage = ({ posts, prevPosts, nextPosts }) => (
     imageAlt={config.shareImageAlt}
   >
     <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
-  </Wrapper>
+  </Layout>
 )
 
 export async function getStaticProps() {
