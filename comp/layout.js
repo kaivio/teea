@@ -33,7 +33,7 @@ export default function Layout({ children, ...prop }) {
 
       <Container>
         <Box p={3} sx={{textAlign: 'center',fontSize:'small'}}>
-        Copyright 2021 teeami
+        © 2021 teeami
         </Box>
       </Container>
     </ThemeProvider>
