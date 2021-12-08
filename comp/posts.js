@@ -15,38 +15,8 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
           .filter((post) => {
             return isLocal || !post.draft
           })
-          .map((post) => (
-            <Box sx={{ pb: 5 }} key={post.slug}>
-              <Heading sx={{ pb: 2, position: "relative" }}>
-                {post.draft && <DraftBadge />}
-                <Link href={"/" + post.slug} passHref>
-                  <a>{post.title}</a>
-                </Link>
-              </Heading>
-              {post.coverImage && (
-                <Box
-                  sx={{
-                    mt: 2,
-                    mb: 3,
-                    border: "1px solid",
-                    borderColor: "rgba(0,0,0,.1)",
-                  }}
-                >
-                  <Image
-                    height={post.coverImageHeight}
-                    width={post.coverImageWidth}
-                    src={post.coverImage}
-                    alt={post.coverImageAlt || ""}
-                  />
-                </Box>
-              )}
-              <Box sx={{ pb: 3 }}>
-                <MDX>{post.excerpt}</MDX>
-              </Box>
-              <Link href={"/" + post.slug} passHref>
-                <a>Read more...</a>
-              </Link>
-            </Box>
+          .map((post, i) => (
+            <Item post={post} key={i} />
           ))}
       <Flex sx={{ fontStyle: "italic" }}>
         <Box sx={{ width: "50%", py: 3, textAlign: "left" }}>
@@ -69,3 +39,39 @@ const Posts = ({ posts, prevPosts, nextPosts }) => {
 }
 
 export default Posts
+
+function Item({ post }) {
+  return (<>
+    <Box sx={{ pb: 5 }}>
+      <Heading sx={{ pb: 2, position: "relative" }}>
+        {post.draft && <DraftBadge />}
+        <Link href={"/" + post.slug} passHref>
+          <a>{post.title}</a>
+        </Link>
+      </Heading>
+      {post.coverImage && (
+        <Box
+          sx={{
+            mt: 2,
+            mb: 3,
+            border: "1px solid",
+            borderColor: "rgba(0,0,0,.1)",
+          }}
+        >
+          <Image
+            height={post.coverImageHeight}
+            width={post.coverImageWidth}
+            src={post.coverImage}
+            alt={post.coverImageAlt || ""}
+          />
+        </Box>
+      )}
+      <Box sx={{ pb: 3 }}>
+        <MDX>{post.excerpt}</MDX>
+      </Box>
+      <Link href={"/" + post.slug} passHref>
+        <a>Read more...</a>
+      </Link>
+    </Box>
+  </>)
+}

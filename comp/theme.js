@@ -17,22 +17,23 @@ export default {
     heading: 1.25,
   },
   colors: {
-    primary: "#2dcea1",
-    secondary: "#2dc5ce",
+    primary: "#50ad9c",
+    secondary: "#d0824b",
     background: "#eed0b3",
     text: "#6c7c8a",
+    textLite: '#91a7ba',
     link:'#df7e88',
-    blue: "#4169e1",
-    cyan: "#41b9e1",
-    gray: "#667788",
-    green: "#27a727",
-    purple: "#6941e1",
-    orange: "#fba100",
-    pink: "#ffb6e3",
-    red: "#ee5555",
+    blue: "#6ec4ec",
+    cyan: "#77cad8",
+    gray: "#ccad91",
+    green: "#a7cda2",
+    purple: "#c1b6ec",
+    orange: "#fcb36d",
+    pink: "#f3d0d4",
+    red: "#efb1b2",
     white: "#fff",
-    yellow: "#FFDD22",
-    lite: "#eee",
+    yellow: "#fde9bb",
+    lite: "#e9ebd5",
     selection:'#b9a38d77',
     modes: {
       dark: {
@@ -40,6 +41,66 @@ export default {
         background: "#000",
         lite: "#333",
       },
+    },
+  },
+  buttons: {
+    primary: {
+      color: 'lite',
+      bg: 'primary',
+      borderColor: 'primary',
+      '&:hover': {
+        color: 'lite',
+        bg: 'green',
+        borderColor: 'primary',
+      }
+    },
+    secondary: {
+      color: 'yellow',
+      bg: 'secondary',
+      '&:hover': {
+        bg: 'orange',
+        borderColor: 'orange',
+      }
+    },
+    disable: {
+      bg:'lite',
+      color:'textLite'
+    }
+  },
+  forms: {
+    label: {
+      fontSize: 1,
+      fontWeight: 'bold',
+    },
+    input: {
+      borderColor: 'text',
+      '&:focus': {
+        borderColor: 'secondary',
+        boxShadow: t => `0 0 0 1px ${t.colors.secondary}`,
+        outline: 'none',
+      },
+    },
+    select: {
+      borderColor: 'text'
+    },
+    textarea: {
+      borderColor: 'text',
+      '&:focus': {
+        borderColor: 'secondary',
+        boxShadow: t => `0 0 0 1px ${t.colors.secondary}`,
+        outline: 'none',
+      },
+    },
+    slider: {
+      color:"text",
+      '&:focus': {
+        color:'secondary'
+      },
+    }
+  },
+  styles: {
+    spinner: {
+      color: 'red',
     },
   },
   space: [0, 4, 8, 16, 32, 64, 128],
