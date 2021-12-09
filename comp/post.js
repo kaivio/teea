@@ -16,7 +16,7 @@ const BlogPost = ({ post }) => {
     pre: (props) => <div {...props} />,
     code: CodeBlock,
   }
-
+  console.log(post);
   return (
     <Container>
       {!isLocal && post.draft ? (

@@ -65,6 +65,10 @@ export default {
     disable: {
       bg:'lite',
       color:'textLite'
+    },
+    link: {
+      bg:'transparent',
+      color: 'link',
     }
   },
   forms: {
@@ -76,7 +80,6 @@ export default {
       borderColor: 'text',
       '&:focus': {
         borderColor: 'secondary',
-        boxShadow: t => `0 0 0 1px ${t.colors.secondary}`,
         outline: 'none',
       },
     },

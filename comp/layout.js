@@ -7,6 +7,9 @@ const theme = merge(themePresetGeist, themediy)
 import NextLink from "next/link"
 import Head from 'next/head'
 
+import Search from './search'
+import searchHandle from "../lib/search-handle"
+
 /**
  * 默认布局
  * @param {*} props 
@@ -17,13 +20,25 @@ export default function Layout({ children, ...prop }) {
       <Head>
         <meta name="theme-color" content={theme.colors.background} />
       </Head>
-      <Flex py={2} px={3} className='topbar'>
+      <Flex color="primary" py={2} px={3} sx={{
+        '& > div':{
+          mr: 4
+        }
+      }} className='topbar'>
         <Box>
           <NextLink href='/'>
             <a>TEEA</a>
           </NextLink>
         </Box>
         <Box sx={{ flex: 1 }}></Box>
+        <Search action={(word)=>{
+          let res = searchHandle(word)
+          console.log(res);
+          if(res){
+            window.location = res
+            //window.open(res[0])
+          }
+        }} />
         <Box>TOP</Box>
       </Flex>
 

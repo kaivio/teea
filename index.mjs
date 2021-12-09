@@ -27,7 +27,7 @@ date:  ${date}
 
 记得好好写完哦～
 `
-  let file = `content/post/_${date}_${slug}.mdx`
+  let file = `content/post/_${date.substr(0,10)}_${slug}.mdx`
   fs.writeFile(file,initContent)
   console.log(`create ${file}`)
 

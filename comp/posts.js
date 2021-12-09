@@ -7,7 +7,6 @@ import Link from "next/link"
 
 const Posts = ({ posts, prevPosts, nextPosts }) => {
   const isLocal = process.env.NODE_ENV === "development"
-
   return (
     <Container>
       {posts &&
