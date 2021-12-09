@@ -25,6 +25,7 @@ pic:
 date:  ${date}
 ---
 
+记得好好写完哦～
 `
   let file = `content/post/_${date}_${slug}.mdx`
   fs.writeFile(file,initContent)
