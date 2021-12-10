@@ -24,7 +24,8 @@
     "react-ga": "^3.3.0",
     "theme-ui": "^0.12.0",
     "theme-ui-preset-geist": "^0.0.2",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "typography-theme-wordpress-2016": "^0.16.19",
+    "yaml": "^1.10.2"
   },
   "devDependencies": {
     "eslint": "7",
