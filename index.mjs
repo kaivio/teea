@@ -20,9 +20,9 @@ function newContent(title,){
 title: ${title}
 slug:  ${slug}
 tags: []
-desc:  
+summary: 
 pic: 
-date:  ${date}
+date:'${date}
 ---
 
 记得好好写完哦～
