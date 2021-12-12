@@ -2,7 +2,8 @@ import React from "react"
 import Highlight, { defaultProps } from "prism-react-renderer"
 // import github from "prism-react-renderer/themes/duotoneLight"
 
-const CodeBlock = ({ children, className }) => {
+const CodeBlock = ({ children, className, ...props}) => {
+  //console.log({children,className,...props});
   const language = className ? className.replace(/language-/, "") : "javascript"
   return (
     <Highlight

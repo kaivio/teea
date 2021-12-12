@@ -21,3 +21,44 @@ a {
 span{
   display: inline-block;
 }
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
+
+h1{
+  font-size: 2em;
+  line-height: 2em;
+}
+
+h2{
+  font-size: 1.5em;
+  line-height: 1.75em;
+}
+
+h3{
+  font-size: 1.25em;
+  line-height: 1.75em;
+}
+
+
+code {
+  font-family: 'monospace';
+  font-size: 'inherit';
+  border-radius: 'small';
+  color:#827717;
+  /* background: #e9ebd5; */
+  background: #ffe7d0;
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 2px;
+}
+
+p code, li  code{
+  font-size: '0.875em';
+}
+
+a  code {
+  color: #df7e88;
+  font-size: '0.875em';
+}

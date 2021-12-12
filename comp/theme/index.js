@@ -66,6 +66,14 @@ colors = {
   }
 }
 
+let $sizes = {
+  xs: 360,
+  sm: 480,
+  md: 570,
+  lg: 750,
+  xl: 960
+}
+
 const theme = {
   breakpoints: [32, 48, 64, 96, 128].map(w => `${w}em`),
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -108,7 +116,8 @@ const theme = {
     copyPlus: 768,
     copy: 680,
     narrowPlus: 600,
-    narrow: 512
+    narrow: 512,
+    ...$sizes
   },
   radii: {
     small: 4,
@@ -127,8 +136,7 @@ const theme = {
     heading: {
       fontWeight: 'bold',
       lineHeight: 'heading',
-      mt: 0,
-      mb: 0
+      my:0,
     },
     ultratitle: {
       fontSize: [5, 6, 7],
@@ -293,6 +301,7 @@ const theme = {
       borderRadius: 'extra'
     },
     interactive: {
+      cursor: 'pointer',
       variant: 'cards.primary',
       textDecoration: 'none',
       WebkitTapHighlightColor: 'transparent',
@@ -352,7 +361,7 @@ const theme = {
   },
   layout: {
     container: {
-      maxWidth: ['layout', null, 'layoutPlus'],
+      maxWidth: ['sm','md','lg','xl'],
       width: '100%',
       mx: 'auto',
       px: 3
@@ -382,6 +391,7 @@ const theme = {
       WebkitFontSmoothing: 'antialiased',
       MozOsxFontSmoothing: 'grayscale'
     },
+    /*****  No work  *****/
     h1: {
       variant: 'text.heading',
       fontSize: 5
@@ -392,7 +402,7 @@ const theme = {
     },
     h3: {
       variant: 'text.heading',
-      fontSize: 2
+      fontSize: 2,
     },
     h4: {
       variant: 'text.heading',
@@ -406,11 +416,12 @@ const theme = {
       variant: 'text.heading',
       fontSize: 0
     },
+    /*****  No work  *****/
     p: {
       color: 'text',
       fontWeight: 'body',
       lineHeight: 'body',
-      my: 3
+      my: 3,
     },
     img: {
       maxWidth: '100%'

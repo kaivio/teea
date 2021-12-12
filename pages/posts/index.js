@@ -1,29 +1,35 @@
-import { Box, Heading } from "@theme-ui/components"
+import { Box, Card, Heading } from "@theme-ui/components"
 import Layout from "../../comp/layout"
 import Posts from "../../comp/posts"
 import find from "../../lib/find"
-import {A} from '../../comp/base'
+import { A } from '../../comp/base'
 import NextLink from 'next/link'
 
 const PostsPage = ({ posts, prevPosts, nextPosts }) => (
   <Layout title='Posts'>
     {/* <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} /> */}
-    {posts.map((v,i)=>(
+    <h1>Posts</h1>
+    {posts.map((v, i) => (
       <Item {...v} key={i} />
     ))}
   </Layout>
 )
 
-function Item({title,slug,date, ...props}){
+function Item({ title, slug, date, ...props }) {
   return (<>
-    <Box my={3}>
-      <Heading as='h2'>
-        <NextLink href={slug}><a>{title}</a></NextLink>
-      </Heading>
-      
-      <Box>{props.summary || props.excerpt}</Box>
-
-    </Box>
+    <NextLink href={slug}>
+      <Card my={3} variant="interactive">
+        <Box as='a'>
+          <h2>
+            {title}
+          </h2>
+          <Box  color="gray"
+      sx={{fontSize: 0}}
+    ><i>{date.substr(0,10)}</i></Box>
+          <Box>{props.summary || props.excerpt}</Box>
+        </Box>
+      </Card>
+    </NextLink>
   </>)
 }
 
