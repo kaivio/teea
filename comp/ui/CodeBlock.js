@@ -1,6 +1,6 @@
 import React from "react"
 import Highlight, { defaultProps } from "prism-react-renderer"
-import github from "prism-react-renderer/themes/github"
+// import github from "prism-react-renderer/themes/duotoneLight"
 
 const CodeBlock = ({ children, className }) => {
   const language = className ? className.replace(/language-/, "") : "javascript"
@@ -9,20 +9,21 @@ const CodeBlock = ({ children, className }) => {
       {...defaultProps}
       code={children}
       language={language}
-      theme={github}
+    //theme={github}
     >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre
-          className={className}
-          style={{ ...style, padding: "20px", marginBottom: "32px" }}
-        >
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token, key })} />
-              ))}
+      {({ className, tokens, getLineProps, getTokenProps }) => (
+        <pre className={className}>
+          {tokens.map((line, i) => {
+            // console.log(getLineProps({ line, key: i }))
+            let { className } = getLineProps({ line, key: i })
+            return <div key={i} className={className}>
+              {line.map((token, key) => {
+                // console.log(getTokenProps({ token, key }))
+                let { className, children } = getTokenProps({ token, key })
+                return <span key={key} className={className}>{children}</span>
+              })}
             </div>
-          ))}
+          })}
         </pre>
       )}
     </Highlight>

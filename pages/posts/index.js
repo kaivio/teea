@@ -20,7 +20,9 @@ function Item({title,slug,date, ...props}){
       <Heading as='h2'>
         <NextLink href={slug}><a>{title}</a></NextLink>
       </Heading>
+      
       <Box>{props.summary || props.excerpt}</Box>
+
     </Box>
   </>)
 }

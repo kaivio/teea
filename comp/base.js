@@ -36,11 +36,7 @@ export function MDX({children}) {
 export function A({ href, active, children }) {
   return (
     <NextLink href={href} passHref>
-      <Link color='link' sx={{
-        '&:hover': {
-          textDecoration: 'underline dotted'
-        }
-      }}>
+      <Link color='link'>
         {children}
       </Link>
     </NextLink>

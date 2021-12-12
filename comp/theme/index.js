@@ -1,15 +1,15 @@
-import prism from './prism'
+//import prism from './prism'
 
 let colors = {
-  primary: "#50ad9c",
-  secondary: "#d0824b",
+  primary: "#f17801",
+  secondary: "#827717",
   background: "#eed0b3",
-  text: "#6c7c8a",
+  text: "#6e4f3b",
   textLite: '#91a7ba',
   link: '#df7e88',
   blue: "#6ec4ec",
   cyan: "#77cad8",
-  gray: "#ccad91",
+  gray: "#967965",
   green: "#a7cda2",
   purple: "#c1b6ec",
   orange: "#fcb36d",
@@ -27,9 +27,9 @@ let colors = {
   black: '#1f2d3d',
   steel: '#273444',
   slate: '#3c4858',
-  muted: '#d8b898',
-  smoke: '#e0e6ed',
-  snow: '#f9fafc',
+  muted: '#c19d85',
+  smoke: '#cdb5a4',
+  snow: '#e5d2c4',
   white: '#ffffff',
 
   twitter: '#1da1f2',
@@ -311,7 +311,7 @@ const theme = {
       color: 'text',
       fontFamily: 'inherit',
       borderRadius: 'base',
-      borderColor: 'text',
+      borderColor: 'gray',
       '&:focus': {
         borderColor: 'primary',
         outline: 'none',
@@ -322,7 +322,7 @@ const theme = {
       '&[type="search"]::-webkit-search-decoration': { display: 'none' }
     },
     textarea: { variant: 'forms.input' },
-
+    select:{variant:'forms.input'},
     label: {
       color: 'text',
       display: 'flex',
@@ -388,15 +388,15 @@ const theme = {
     },
     h2: {
       variant: 'text.heading',
-      fontSize: 4
+      fontSize: 3
     },
     h3: {
       variant: 'text.heading',
-      fontSize: 3
+      fontSize: 2
     },
     h4: {
       variant: 'text.heading',
-      fontSize: 2
+      fontSize: 1
     },
     h5: {
       variant: 'text.heading',
@@ -431,16 +431,13 @@ const theme = {
     pre: {
       fontFamily: 'monospace',
       fontSize: 1,
-      p: 3,
       color: 'text',
-      bg: 'sunken',
       overflow: 'auto',
       borderRadius: 'default',
       code: {
         color: 'inherit',
         mx: 0,
         px: 0,
-        ...prism
       }
     },
     code: {

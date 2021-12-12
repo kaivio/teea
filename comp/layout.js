@@ -5,6 +5,7 @@ import { ThemeProvider, merge } from 'theme-ui'
 // import themediy from './theme'
 // const theme = merge(themePresetGeist, themediy)
 import theme from './theme/index'
+
 import NextLink from "next/link"
 import Head from 'next/head'
 
@@ -23,6 +24,7 @@ export default function Layout({title, children, ...prop }) {
         <meta name="theme-color" content={theme.colors.background} />
       </Head>
       <Flex color="primary" py={2} px={3} sx={{
+        alignItems:'center',
         '& > div':{
           mr: 4
         }
