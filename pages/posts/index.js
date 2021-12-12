@@ -1,36 +1,19 @@
-import config from "../../blog.config"
 import Layout from "../../comp/layout"
 import Posts from "../../comp/posts"
-import { getAllPosts } from "../../lib"
+import find from "../../lib/find"
 
 const PostsPage = ({ posts, prevPosts, nextPosts }) => (
-  <Layout
-    url={config.url}
-    title={config.title}
-    description={config.description}
-    imageUrl={config.shareImage}
-    imageAlt={config.shareImageAlt}
-  >
+  <Layout>
     <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
   </Layout>
 )
 
 export async function getStaticProps() {
-  const posts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "coverImageAlt",
-    "coverImageHeight",
-    "coverImageWidth",
-    "excerpt",
-    "draft",
-  ])
+  let posts = await find('post')
+  console.log(posts);
 
   const startIndex = 0
-  const endIndex = config.postsPerPage
+  const endIndex = 10
   const prevPosts = null
   const nextPosts = endIndex >= posts.length ? null : 2
 

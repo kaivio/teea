@@ -1,42 +1,23 @@
 import Layout from "../comp/layout"
-import Post from "../comp/post"
-import config from "../blog.config.js"
-import { getPostBySlug, getAllPosts } from "../lib"
+import { findOne, find } from "../lib/find"
+import MarkdownView from "../comp/markdown"
+import { Heading } from "@theme-ui/components"
 
-const PostPage = ({ post }) => (
-  <Layout
-    url={config.url + post.slug}
-    title={config.title + " | " + post.title}
-    description={post.excerpt}
-    imageUrl={config.url + post.coverImage}
-    imageAlt={post.coverImageAlt}
-  >
-    <Post post={post} />
+const PostPage = ({ data, content }) => (
+  <Layout title={data.title}>
+    <Heading as="h1">{data.title}</Heading>
+    <MarkdownView>{content}</MarkdownView>
   </Layout>
 )
 
 export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug, [
-    "title",
-    "excerpt",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "coverImage",
-    "coverImageAlt",
-    "coverImageHeight",
-    "coverImageWidth",
-    "draft",
-  ])
+  const props = await findOne('post', params.slug)
 
-  return {
-    props: { post },
-  }
+  return { props }
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"])
+  const posts = await find('post')
 
   return {
     paths: posts.map((post) => {

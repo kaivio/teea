@@ -14,10 +14,11 @@ import searchHandle from "../lib/search-handle"
  * 默认布局
  * @param {*} props 
  */
-export default function Layout({ children, ...prop }) {
+export default function Layout({title, children, ...prop }) {
   return (
     <ThemeProvider theme={theme}>
       <Head>
+        <title>{title}</title>
         <meta name="theme-color" content={theme.colors.background} />
       </Head>
       <Flex color="primary" py={2} px={3} sx={{

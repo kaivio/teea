@@ -1,6 +1,7 @@
 {
   "name": "tooh",
   "private": true,
+  "main": "index.mjs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
