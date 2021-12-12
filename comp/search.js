@@ -12,18 +12,15 @@ export default function Search({action=()=>{},...props}) {
       }>
       <Input sx={{
         color: 'text',
-        borderColor: 'textLite',
+        borderColor: 'muted',
         pr: '3em',
-        '&:focus': {
-          borderColor: 'primary'
-        }
       }}
         value={w}
         onChange={(e) => { setW(e.target.value) }}
       />
       <Button variant="link"
         type="submit"
-        color={w ? 'primary' : 'textLite'} sx={{
+        color={w ? 'primary' : 'muted'} sx={{
           transform: 'translateX(-100%)',
         }}>Go</Button>
     </Flex>

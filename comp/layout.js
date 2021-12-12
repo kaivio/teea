@@ -1,9 +1,10 @@
 /** 布局组建库，用于包装内容页面 */
 import { Box, Button, Container, Flex, Text } from "@theme-ui/components"
 import { ThemeProvider, merge } from 'theme-ui'
-import themePresetGeist from 'theme-ui-preset-geist'
-import themediy from './theme'
-const theme = merge(themePresetGeist, themediy)
+// import themePresetGeist from 'theme-ui-preset-geist'
+// import themediy from './theme'
+// const theme = merge(themePresetGeist, themediy)
+import theme from './theme/index'
 import NextLink from "next/link"
 import Head from 'next/head'
 

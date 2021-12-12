@@ -1,12 +1,29 @@
+import { Box, Heading } from "@theme-ui/components"
 import Layout from "../../comp/layout"
 import Posts from "../../comp/posts"
 import find from "../../lib/find"
+import {A} from '../../comp/base'
+import NextLink from 'next/link'
 
 const PostsPage = ({ posts, prevPosts, nextPosts }) => (
-  <Layout>
-    <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
+  <Layout title='Posts'>
+    {/* <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} /> */}
+    {posts.map((v,i)=>(
+      <Item {...v} key={i} />
+    ))}
   </Layout>
 )
+
+function Item({title,slug,date, ...props}){
+  return (<>
+    <Box my={3}>
+      <Heading as='h2'>
+        <NextLink href={slug}><a>{title}</a></NextLink>
+      </Heading>
+      <Box>{props.summary || props.excerpt}</Box>
+    </Box>
+  </>)
+}
 
 export async function getStaticProps() {
   let posts = await find('post')

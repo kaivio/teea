@@ -1,7 +1,7 @@
 import Layout from "../comp/layout"
 import { A, MDX } from '../comp/base'
 import * as lib from '../lib'
-import theme from '../comp/theme'
+import theme from '../comp/theme/index'
 import { Spinner,Textarea, Slider, Radio, Checkbox, Select, Input, Label, Box, Button, Flex, Card } from "@theme-ui/components"
 
 export default function Home(pageProps) {

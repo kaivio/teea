@@ -1,5 +1,5 @@
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
+
+export default  myTheme = {
   useCustomProperties: true,
   useColorSchemeMediaQuery: true,
   fonts: {
@@ -104,6 +104,23 @@ export default {
   styles: {
     spinner: {
       color: 'red',
+    },
+  },
+  text: {
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '.2em',
+    },
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+    },
+    display: {
+      // extends the text.heading styles
+      variant: 'text.heading',
+      fontSize: [6, 7, 8],
+      fontWeight: 'display',
     },
   },
   space: [0, 4, 8, 16, 32, 64, 128],
