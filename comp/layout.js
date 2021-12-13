@@ -1,5 +1,5 @@
 /** 布局组建库，用于包装内容页面 */
-import { Box, Button, Container, Flex, Text } from "@theme-ui/components"
+import {Grid, Box, Button, Container, Flex, Text } from "@theme-ui/components"
 import { ThemeProvider, merge } from 'theme-ui'
 import {Global} from '@emotion/react'
 
@@ -26,8 +26,17 @@ export default function Layout({ title, children, ...prop }) {
         <title>{title}</title>
         <meta name="theme-color" content={theme.colors.background} />
       </Head>
-
+      <Grid columns={[1,1, 2]}>
       <Flex color="primary" py={2} px={3} sx={{
+        alignItems: 'center',
+      }}>
+        <Box>
+          <NextLink href='/'>
+            <a>TEEA</a>
+          </NextLink></Box>
+
+        <Box sx={{ flex: 1 }}></Box>
+        <Search width="2fr" action={(word) => { <Flex color="primary" py={2} px={3} sx={{
         alignItems: 'center',
         flexWrap: 'wrap',
         '& > div': {
@@ -54,6 +63,27 @@ export default function Layout({ title, children, ...prop }) {
           }
         }} />
       </Flex>
+          let res = searchHandle(word)
+          console.log(res);
+          if (res) {
+            window.location = res
+            //window.open(res[0])
+          }
+        }} />
+      </Flex>
+      <Flex color="primary" sx={{
+        alignItems: 'center',
+        '& > div': {
+          px: 2
+          }
+        }}>
+        {['posts', 'note', 'test'].map((v, i) => (
+          <Box key={i}> <NextLink href={'/' + v} >
+            <a>{v}</a>
+          </NextLink></Box>
+        ))}
+      </Flex>
+      </Grid>
 
       <Container sx={{ flex: '1 1 auto' }}>
         {children}
