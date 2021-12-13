@@ -14,8 +14,9 @@ const CodeBlock = ({ children, className, ...props}) => {
     >
       {({ className, tokens, getLineProps, getTokenProps }) => (
         <pre className={className}>
-          {tokens.map((line, i) => {
-            // console.log(getLineProps({ line, key: i }))
+          {tokens.map((line, i, a) => {
+            //console.log(getLineProps({ line, key: i }))
+            if(a.length - 1 == i) return null
             let { className } = getLineProps({ line, key: i })
             return <div key={i} className={className}>
               {line.map((token, key) => {

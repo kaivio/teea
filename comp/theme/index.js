@@ -30,7 +30,7 @@ let colors = {
   muted: '#c19d85',
   smoke: '#cdb5a4',
   snow: '#e5d2c4',
-  white: '#ffffff',
+  white: '#f6eace',
 
   twitter: '#1da1f2',
   facebook: '#3b5998',

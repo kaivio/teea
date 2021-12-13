@@ -3,16 +3,15 @@ import { findOne, find } from "../lib/find"
 import MarkdownView from "../comp/markdown"
 import { Box, Heading } from "@theme-ui/components"
 
-const PostPage = ({ data, content }) => (
-  <Layout title={data.title}>
+export default function Post({ data, content }) {
+  return (<Layout title={data.title}>
     <h1>{data.title}</h1>
     <Box  color="gray"
       sx={{fontSize: 0}}
     ><i>{data.date.substr(0,10)}</i></Box>
-
     <MarkdownView>{content}</MarkdownView>
-  </Layout>
-)
+  </Layout>)
+}
 
 export async function getStaticProps({ params }) {
   const props = await findOne('post', params.slug)
@@ -33,4 +32,4 @@ export async function getStaticPaths() {
   }
 }
 
-export default PostPage
+
