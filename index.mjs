@@ -4,10 +4,10 @@ import { program } from "commander"
 
 async function main() {
   program
-    .option('-n,--note', 'opacity /manual')
+    .option('-n,--note', '操作 /note')
 
   program.command("new")
-    .description("new post")
+    .description("新建内容")
     .argument("[title...]")
     .action(newContent)
 
@@ -57,6 +57,7 @@ date: '${date}'
   console.log(`create ${templates[type].file}`)
 
 }
+
 
 function ask(value){
   if(value) return value
