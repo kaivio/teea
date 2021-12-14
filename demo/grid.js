@@ -74,9 +74,25 @@ function Grid3(props){
   </>)
 }
 
+function Grid4(props){
+  return (<>
+    <Box bg='#e2eddc' sx={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(5,1fr)',
+      gridGap: '5px',
+    }}>
+      {range(1,15).map((v, i) => {
+        return (<Box key={i} bg="pink" sx={{
+          lineHeight: '1fr',
+          textAlign: 'center',
+        }}>1fr</Box>)
+      })}
+    </Box>
+  </>)
+}
 
 export default function Grid(i) {
-  return [<>No demo</>, Grid1,Grid2, Grid3][i]
+  return [<>No demo</>, Grid1,Grid2, Grid3,Grid4][i]
 }
 
 
