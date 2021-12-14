@@ -1,58 +1,21 @@
-import config from "../../blog.config"
 import Layout from "../../comp/layout"
-import Posts from "../../comp/posts"
-import { getAllPosts } from "../../lib"
-
-const PostsPage = ({ posts, prevPosts, nextPosts, pageIndex, numPages }) => (
-  <Layout
-    url={config.url + "blog/" + (pageIndex + 1)}
-    title={config.title + " | Blog - " + (pageIndex + 1) + " of " + numPages}
-    description={config.description}
-    imageUrl={config.shareImage}
-    imageAlt={config.shareImageAlt}
-  >
-    <Posts posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
+const PostsPage = (props) => (
+  <Layout>
+    Todo
   </Layout>
 )
 
 export async function getStaticProps({ params }) {
-  const posts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "coverImageAlt",
-    "coverImageHeight",
-    "coverImageWidth",
-    "excerpt",
-    "draft",
-  ])
-
-  const pageIndex = parseInt(params.page) - 1
-  const startIndex = pageIndex * config.postsPerPage
-  const endIndex = (pageIndex + 1) * config.postsPerPage
-
-  const prevPosts = pageIndex > 0 ? pageIndex : null
-  const nextPosts = endIndex >= posts.length ? null : pageIndex + 2
-  const numPages = (config.postsPerPage % getAllPosts().length) + 1
-
   return {
     props: {
-      posts: posts.slice(startIndex, endIndex),
-      prevPosts,
-      nextPosts,
-      pageIndex,
-      numPages,
+
     },
   }
 }
 
 export async function getStaticPaths() {
-  const numPages = (config.postsPerPage % (await getAllPosts()).length) + 1
-
   return {
-    paths: [...Array(numPages)].map((v, i) => {
+    paths: [1].map((v, i) => {
       return {
         params: { page: (i + 1).toString() },
       }
