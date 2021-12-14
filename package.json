@@ -16,6 +16,7 @@
     "@theme-ui/typography": "^0.12.0",
     "commander": "^8.3.0",
     "disqus-react": "^1.1.2",
+    "feather-icons": "^4.28.0",
     "filehound": "^1.17.5",
     "find": "^0.3.0",
     "fs-extra": "^10.0.0",
