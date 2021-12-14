@@ -2,9 +2,13 @@ import Layout from "../comp/layout"
 import { A, MDX } from '../comp/base'
 import * as lib from '../lib'
 import theme from '../comp/theme/index'
-import { Spinner,Textarea, Slider, Radio, Checkbox, Select, Input, Label, Box, Button, Flex, Card } from "@theme-ui/components"
+import { Spinner, Textarea, Slider, Radio, Checkbox, Select, Input, Label, Box, Button, Flex, Card, Grid } from "@theme-ui/components"
+import Feather from "../comp/feather"
+import feather from "feather-icons";
+import { useState } from "react"
 
 export default function Home(pageProps) {
+  let [hint, setHint] = useState('----')
   return (<Layout >
     <Flex sx={{ flexWrap: 'wrap' }}>
       {Object.keys(theme.colors).map((k) => (
@@ -60,11 +64,31 @@ export default function Home(pageProps) {
       <Label>Slider</Label>
       <Slider mb={3} />
       <Button>Submit</Button>
-      <Spinner size='3em' />
     </Box>
-    <Card>
-    Card style variants can be defined in the theme.cards object. By default the Card component uses the theme.cards.primary variant.
+
+    <Box>
+    <Card sx={{
+      position: 'sticky',
+      top:0
+    }}>
+      {hint}
     </Card>
+    <Flex pt={4} sx={{
+      flexWrap:'wrap',
+      '&>div':{
+        margin: 2
+      }
+    }}>
+      {Object.keys(feather.icons).map((v, i) => (
+        <Box key={i} onClick={()=>{
+          setHint(v)
+        }}>
+          <Feather i={v} />
+        </Box>
+      ))}
+
+    </Flex>
+    </Box>
   </Layout>)
 }
 
