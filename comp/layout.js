@@ -1,7 +1,7 @@
 /** 布局组建库，用于包装内容页面 */
-import {Grid, Box, Button, Container, Flex, Text } from "@theme-ui/components"
+import { Grid, Box, Button, Container, Flex, Text } from "@theme-ui/components"
 import { ThemeProvider, merge } from 'theme-ui'
-import {Global} from '@emotion/react'
+import { Global } from '@emotion/react'
 
 
 // import themePresetGeist from 'theme-ui-preset-geist'
@@ -14,6 +14,7 @@ import Head from 'next/head'
 
 import Search from './search'
 import searchHandle from "../lib/search-handle"
+import { firstUpper } from "../lib"
 
 /**
  * 默认布局
@@ -26,63 +27,48 @@ export default function Layout({ title, children, ...prop }) {
         <title>{title}</title>
         <meta name="theme-color" content={theme.colors.background} />
       </Head>
-      <Grid columns={[1,1, 2]}>
-      <Flex color="primary" py={2} px={3} sx={{
-        alignItems: 'center',
-      }}>
-        <Box>
-          <NextLink href='/'>
-            <a>TEEA</a>
-          </NextLink></Box>
-
-        <Box sx={{ flex: 1 }}></Box>
-        <Search width="2fr" action={(word) => { <Flex color="primary" py={2} px={3} sx={{
-        alignItems: 'center',
-        flexWrap: 'wrap',
-        '& > div': {
-          mr: 4
-        }
-      }}>
-        <Box>
-          <NextLink href='/'>
-            <a>TEEA</a>
-          </NextLink></Box>
-        {['posts', 'note', 'test'].map((v, i) => (
-          <Box key={i}> <NextLink href={'/' + v} >
-            <a>{v}</a>
-          </NextLink></Box>
-        ))}
-
-        <Box sx={{ flex: 1 }}></Box>
-        <Search action={(word) => {
-          let res = searchHandle(word)
-          console.log(res);
-          if (res) {
-            window.location = res
-            //window.open(res[0])
-          }
-        }} />
-      </Flex>
-          let res = searchHandle(word)
-          console.log(res);
-          if (res) {
-            window.location = res
-            //window.open(res[0])
-          }
-        }} />
-      </Flex>
-      <Flex color="primary" sx={{
-        alignItems: 'center',
-        '& > div': {
-          px: 2
+      <Grid  p={2} color='primary' 
+        gap={2} columns='repeat(6,1fr)'
+        sx={{
+          alignItems: 'center',
+          //'& > * ':{bg:'pink'}
+        }}
+      >
+        <Box sx={{
+          textAlign: 'center',
+          gridColumn:['1/3','1/2'],
+        }}>
+        <NextLink href='/'>
+          <a>TEEA</a>
+        </NextLink>
+        </Box>
+        <Box sx={{
+          color:'secondary',
+          gridColumn: ['1/7', '2 / 5'],
+          gridRow: ['2/3','1/2'],
+          //border: ['1px smoke solid'],
+          '& > a':{
+            padding:'8px 15px'
           }
         }}>
-        {['posts', 'note', 'test'].map((v, i) => (
-          <Box key={i}> <NextLink href={'/' + v} >
-            <a>{v}</a>
-          </NextLink></Box>
-        ))}
-      </Flex>
+          {['posts', 'note', 'test'].map((v, i) => (
+            <NextLink key={i} href={'/' + v} >
+              <a>{firstUpper(v)}</a>
+            </NextLink>
+          ))}
+        </Box>
+        <Search  placeholder="npm:<package>"
+        sx={{
+          gridColumn:['3/7','5/7']
+        }}
+        action={(word) => {
+          let res = searchHandle(word)
+          console.log(res);
+          if (res) {
+            //window.location = res
+            window.open(res)
+          }
+        }} />
       </Grid>
 
       <Container sx={{ flex: '1 1 auto' }}>

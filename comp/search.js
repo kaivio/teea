@@ -1,16 +1,21 @@
 import { Box, Button, Flex, Input } from "@theme-ui/components";
 import { useState } from "react";
 
-export default function Search({action=()=>{},...props}) {
+export default function Search({sx,action=()=>{},...props}) {
   let [w, setW] = useState('')
   return (<>
-    <Flex as="form" {...props} onSubmit={(e) => {
+    <Box as="form" 
+    sx={{
+      position: 'relative',
+      ...sx
+    }}
+    onSubmit={(e) => {
       e.preventDefault();
       action(w)
       setW('')
     }
       }>
-      <Input sx={{
+      <Input  {...props}  sx={{
         color: 'text',
         borderColor: 'muted',
         pr: '3em',
@@ -21,8 +26,9 @@ export default function Search({action=()=>{},...props}) {
       <Button variant="link"
         type="submit"
         color={w ? 'primary' : 'muted'} sx={{
-          transform: 'translateX(-100%)',
+          position: 'absolute',
+          right: 0,top: 0
         }}>Go</Button>
-    </Flex>
+    </Box>
   </>)
 }

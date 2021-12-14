@@ -320,7 +320,7 @@ const theme = {
       color: 'text',
       fontFamily: 'inherit',
       borderRadius: 'base',
-      borderColor: 'gray',
+      borderColor: 'muted',
       '&:focus': {
         borderColor: 'primary',
         outline: 'none',
