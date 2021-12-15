@@ -231,9 +231,12 @@ const theme = {
       letterSpacing: 'headline',
       WebkitTapHighlightColor: 'transparent',
       transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
-      ':focus,:hover': {
-        boxShadow: 'elevated',
-        transform: 'scale(1.0625)'
+      ':hover': {
+        filter: 'brightness(85%)'
+
+      },
+      '&:active':{
+        filter: 'brightness(65%)'
       },
       svg: { ml: -1, mr: 2 }
     },
@@ -241,13 +244,21 @@ const theme = {
       color: 'yellow',
       bg: 'secondary',
       '&:hover': {
-        bg: 'orange',
-        borderColor: 'orange',
+        filter: 'brightness(85%)'
+      },
+      '&:active':{
+        filter: 'brightness(65%)'
       }
     },
     link: {
       bg:'transparent',
       color: 'link',
+      '&:hover': {
+        filter: 'brightness(85%)'
+      },
+      '&:active':{
+        filter: 'brightness(65%)'
+      }
     },
     lg: {
       variant: 'buttons.primary',

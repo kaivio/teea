@@ -42,3 +42,7 @@ export function A({ href, active, children }) {
     </NextLink>
   )
 }
+
+export function Boy({sx,...props}){
+  return <Box {...props} sx={{display:'inline-block',...sx}}/>
+}

@@ -62,3 +62,10 @@ a  code {
   color: #df7e88;
   font-size: '0.875em';
 }
+
+.key-feedback:hover{
+  filter: brightness(85%);
+}
+.key-feedback:active{
+  filter: brightness(65%);
+}

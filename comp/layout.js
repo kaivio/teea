@@ -16,6 +16,7 @@ import Search from './search'
 import searchHandle from "../lib/search-handle"
 import { firstUpper, isRelUrl } from "../lib"
 import { useRouter } from "next/dist/client/router"
+import { Boy } from "./base"
 
 /**
  * 默认布局
@@ -29,7 +30,7 @@ export default function Layout({ title, children, ...prop }) {
         <title>{title}</title>
         <meta name="theme-color" content={theme.colors.background} />
       </Head>
-      <Grid  p={2} color='primary' 
+      <Grid p={2} color='primary'
         gap={2} columns='repeat(6,1fr)'
         sx={{
           alignItems: 'center',
@@ -38,19 +39,34 @@ export default function Layout({ title, children, ...prop }) {
       >
         <Box sx={{
           textAlign: 'center',
-          gridColumn:['1/3','1/2'],
+          gridColumn: ['1/3', '1/2'],
         }}>
-        <NextLink href='/'>
-          <a>TEEA</a>
-        </NextLink>
+          <Boy sx={{
+            '&:hover': {
+              filter: 'brightness(135%)'
+            },
+            '&:active': {
+              filter: 'brightness(85%)'
+            }
+          }}>
+            <NextLink href='/'>
+              <a>TEEA</a>
+            </NextLink>
+          </Boy>
         </Box>
         <Box sx={{
-          color:'secondary',
+          color: 'secondary',
           gridColumn: ['1/7', '2 / 5'],
-          gridRow: ['2/3','1/2'],
+          gridRow: ['2/3', '1/2'],
           //border: ['1px smoke solid'],
-          '& > a':{
-            padding:'8px 15px'
+          '& > a': {
+            padding: '8px 15px'
+          },
+          '&> a:hover': {
+            filter: 'brightness(125%)'
+          },
+          '&> a:active': {
+            filter: 'brightness(85%)'
           }
         }}>
           {['posts', 'note', 'test'].map((v, i) => (
@@ -59,22 +75,22 @@ export default function Layout({ title, children, ...prop }) {
             </NextLink>
           ))}
         </Box>
-        <Search  placeholder="npm:<package>"
-        sx={{
-          gridColumn:['3/7','5/7']
-        }}
-        action={(word) => {
-          let res = searchHandle(word)
-          console.log(res);
-          if (res) {
-            if(isRelUrl(res)){
-              router.push(res)
-              //window.location = res
-            }else{
-              window.open(res)
+        <Search placeholder="npm:<package>"
+          sx={{
+            gridColumn: ['3/7', '5/7']
+          }}
+          action={(word) => {
+            let res = searchHandle(word)
+            console.log(res);
+            if (res) {
+              if (isRelUrl(res)) {
+                router.push(res)
+                //window.location = res
+              } else {
+                window.open(res)
+              }
             }
-          }
-        }} />
+          }} />
       </Grid>
 
       <Container sx={{ flex: '1 1 auto' }}>
