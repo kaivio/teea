@@ -1,0 +1,7 @@
+{
+  "name": "tool",
+  "type":"module",
+  "version": "1.0.0",
+  "main": "manage.js",
+  "license": "MIT"
+}

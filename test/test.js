@@ -1,6 +1,5 @@
 
 const Vibrant = require('node-vibrant')
-const getColors = require('get-image-colors')
 
 
 f = 'https://pb.nichi.co/fresh-casino-stomach' 
