@@ -1,5 +1,7 @@
 import { Box, Button, Flex, Input } from "@theme-ui/components";
 import { useState } from "react";
+import Feather from "../comp/feather"
+
 
 export default function Search({sx,action=()=>{},...props}) {
   let [w, setW] = useState('')
@@ -27,8 +29,10 @@ export default function Search({sx,action=()=>{},...props}) {
         type="submit"
         color={w ? 'primary' : 'muted'} sx={{
           position: 'absolute',
-          right: 0,top: 0
-        }}>Go</Button>
+          right: 0,top: 0,
+        }}>
+          <Feather i="arrow-right"  />
+        </Button>
     </Box>
   </>)
 }

@@ -9,6 +9,7 @@ module.exports = withMDX({
     // Fixes npm packages (mdx) that depend on `fs` module
     if (!isServer) {
       config.resolve.fallback.fs = false
+      config.resolve.fallback.chalk = false
     }
     config.module.rules.push(
         {
