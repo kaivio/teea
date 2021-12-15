@@ -71,7 +71,7 @@ export default function Layout({ title, children, ...prop }) {
               router.push(res)
               //window.location = res
             }else{
-              ///window.open(res)
+              window.open(res)
             }
           }
         }} />
