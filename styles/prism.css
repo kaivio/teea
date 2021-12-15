@@ -75,7 +75,7 @@ pre[class*="language-"] {
 .token.selector,
 .token.important,
 .token.atrule {
-  color: #9d0006; /* red2 */
+  color: #9fa14a; /* red2 */
 }
 
 .token.operator,
@@ -105,7 +105,7 @@ pre[class*="language-"] {
 
 .token.string,
 .token.char {
-  color: #797403; /* green2 */
+  color: #ff861d; /* green2 */
 }
 
 .token.attr-value,
@@ -123,7 +123,7 @@ pre[class*="language-"] {
 }
 
 .token.regex {
-  background: #797403; /* green2 */
+  background: #ffcc2f; /* green2 */
 }
 
 .token.bold {

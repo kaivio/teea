@@ -14,13 +14,15 @@ import Head from 'next/head'
 
 import Search from './search'
 import searchHandle from "../lib/search-handle"
-import { firstUpper } from "../lib"
+import { firstUpper, isRelUrl } from "../lib"
+import { useRouter } from "next/dist/client/router"
 
 /**
  * 默认布局
  * @param {*} props 
  */
 export default function Layout({ title, children, ...prop }) {
+  const router = useRouter()
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -65,8 +67,12 @@ export default function Layout({ title, children, ...prop }) {
           let res = searchHandle(word)
           console.log(res);
           if (res) {
-            //window.location = res
-            window.open(res)
+            if(isRelUrl(res)){
+              router.push(res)
+              //window.location = res
+            }else{
+              ///window.open(res)
+            }
           }
         }} />
       </Grid>
