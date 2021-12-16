@@ -1,5 +1,10 @@
+import remarkFrontmatter from 'remark-frontmatter'
 const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkFrontmatter],
+    rehypePlugins: [],
+  },
 })
 
 module.exports = withMDX({
