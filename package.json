@@ -10,9 +10,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.6.0",
-    "@mdx-js/loader": "^1.6.22",
     "@mdx-js/runtime": "^1.6.22",
-    "@next/mdx": "^12.0.4",
     "@theme-ui/typography": "^0.12.0",
     "axios": "^0.24.0",
     "chalk": "^5.0.0",
@@ -32,10 +30,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-ga": "^3.3.0",
-    "remark-frontmatter": "^4.0.1",
     "theme-ui": "^0.12.0",
-    "theme-ui-preset-geist": "^0.0.2",
-    "typography-theme-wordpress-2016": "^0.16.19",
     "yaml": "^1.10.2",
     "yaml-loader": "^0.6.0"
   },
@@ -43,6 +38,7 @@
     "eslint": "7",
     "eslint-config-next": "12.0.4",
     "onchange": "^7.1.0",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "@mdx-js/mdx": "^2.0.0-rc.2"
   }
 }
