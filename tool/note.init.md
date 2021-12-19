@@ -3,10 +3,8 @@ title: $title
 slug: $slug
 tags: []
 keyword: []
-summary: 
-pic: 
 date: '$date'
 ---
 
 
-<Demo>记得好好写完哦～</Demo>
+<Demo>那就开始吧～</Demo>

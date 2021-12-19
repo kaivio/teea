@@ -16,3 +16,4 @@ export default function MarkdownView({components,children}){
     <MDX components={{..._components,...components}}>{children}</MDX>
   </>)
 }
+export const components = _components
